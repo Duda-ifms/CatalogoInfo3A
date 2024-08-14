@@ -1,19 +1,40 @@
 // Crie um elemento `<div>`.
 // Utilize o método `map` para listar cada objeto da `listaProdutos`
 // dentro desse `<div>`.
-import { useState } from "react";
 
+import { useState} from "react";
 export default function Home() {
-  const [listaProdutos, setProdutos] = useState([
-    { id: 1, nome: 'Produto A', preco: 'R$ 10,00' },
-    { id: 2, nome: 'Produto B', preco: 'R$ 20,00' },
-    { id: 3, nome: 'Produto C', preco: 'R$ 30,00' }
-  ]);
 
-  return (
-    <div>
-         <h1>Livros de Programação</h1>
-    </div>
-   
-  );
+    const [listaFlores, setFlores] = useState([  
+        { 
+          id: 1,
+          item: "Flor Rosa",
+          preco: "R$ 19,00"
+          },
+          {
+            id: 2,
+            item: "Flor Viotela",
+            preco: "R$ 10,00"
+          },
+          {
+            id: 3,
+            item: "Flor Tulipa",
+            preco: "29,00"
+          },
+    ]);
+
+    return(
+        <div>
+            <h1>Floricultura</h1>
+        </div>
+    );
 }
+
+    listaFlores.map((Flor)=>
+      <div key= {Flor.id}>
+      <p>{Flor.nome}</p>
+      <p>{Flor.preco}</p>
+  
+    </div>
+    )
+    
